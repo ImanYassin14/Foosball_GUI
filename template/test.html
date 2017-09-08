@@ -1,0 +1,30 @@
+<html>
+<head>
+          <style>
+              #markings{
+                  height: 100%;
+                  width: 100%;
+                  outline: 1px solid black;
+                  position: relative
+              }
+              #ball{
+                  content: " ";
+                  position: absolute;
+                  height: 70px;
+                  width: 70px;
+                  background: url(/ball.png);
+                  background-size: 130%;
+                  left : 0px;
+                  top:0px;
+              }
+          </style>
+          <script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+<body>
+<div id='markings'>
+      <div class='halfway-line' id='ball'></div>
+</div>
+              <script type="text/javascript" src="{{ url_for('static', filename='form3.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<html>
+<head>
+	<style type="text/css">
+.fussball-table {
+  position: relative;
+  margin: 0 auto;
+  z-index: 10;
+  width: 100%;
+  height:100%;
+    background-image: url(BackG.png);
+  background-size: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/*make background*/
+.fussball-table .pitch {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+
+/*------ score -------*/
+.fussball-table .pitch:after , .fussball-table .pitch:before {
+  content: "0";
+  font-family: bold;
+  text-align: center;
+  line-height: 75px;
+  font-size: 60px;
+  font-family: oblique;
+  color: #fff;
+  position: absolute;
+  z-index: 20;
+  top: 86.7%;
+  height: 12%;
+  width: 4.6%;
+  border-radius: 6px;
+   box-shadow: inset 0px 0px 130px 60px rgba(0, 0, 0, 0.25);
+}
+.fussball-table .pitch:after {
+    left: 65.1%;
+    background: #4682B4;
+}
+/*make black border*/
+.fussball-table .pitch:before {
+  left: 30.6%;
+  background: #ff4c4c ;
+}
+
+/*-------------------------------------------------------players------------------------------------------------------*/
+/* deteminate start & end points to players*/
+.fussball-table .teams {
+  position: absolute;
+  top: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 100%;
+  width: 92.5%;
+  z-index: 15;
+}
+
+
+/*draw red players stick*/
+.fussball-table .teams > div {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+/*draw sticks*/
+.fussball-table .teams .blue-team #defenceB , .fussball-table .teams .blue-team #forwardsB {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 6px;
+  margin: auto 0 auto 0px;
+  height: 80%;
+  background: #f5f6f6;
+  background: -webkit-linear-gradient(left, #f5f6f6 0%, #b9babf 20%, #878891 48%, #dddfe3 80%, #f5f6f6 100%);
+  box-shadow: 15px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.fussball-table .teams .red-team #defenceR ,.fussball-table .teams .red-team #forwardsR  {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 6px;
+  margin: auto 0 auto 0px;
+  height: 80%;
+  background: #f5f6f6;
+  background: -webkit-linear-gradient(left, #f5f6f6 0%, #b9babf 20%, #878891 48%, #dddfe3 80%, #f5f6f6 100%);
+  box-shadow: 15px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+/*draw hands of sticks*/
+.fussball-table .teams > div > div:after, .fussball-table .teams > div > div:before {
+  content: " ";
+  position: absolute;
+  bottom: -45px;
+  width: 200%;
+  height: 9%;
+  margin-top: 0px; 
+  margin-left: -50%;
+  background: #959595;
+  background: -webkit-linear-gradient(left, #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+  box-shadow: 15px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+/*draw small stick border */
+.fussball-table .teams > div > div:before {
+  bottom: auto;
+  top: -5px;
+  width: 130%;
+  height: 2%;
+  margin-left: -10%;
+  border-radius: 2px;
+}
+
+
+/*draw three defence players ---------------Position of player on the stick*/
+/* --------------blue defence -----------------*/
+.fussball-table .teams .blue-team #defenceB #playerB1d{
+  top: 110px;
+}
+.fussball-table .teams .blue-team #defenceB #playerB2d{
+  top: 240px;
+}
+.fussball-table .teams .blue-team #defenceB #playerB3d{
+  top: 375px;
+}
+/*----------------blue forward --------------*/
+.fussball-table .teams .blue-team #forwardsB #playerB1f{
+  top: 110px;
+}
+.fussball-table .teams .blue-team #forwardsB #playerB2f{
+  top: 240px;
+}
+.fussball-table .teams .blue-team #forwardsB #playerB3f {
+  top: 375px;
+}
+
+.fussball-table .teams .blue-team #defenceB .players:before , .fussball-table .teams .blue-team #forwardsB .players:before{
+  top: 10%;   /*return later -----------------------rania------------------*/
+}
+.fussball-table .teams .blue-team #defenceB .players:after , .fussball-table .teams .blue-team #forwardsB .players:after {
+  top: 89%;
+}
+
+/*-------------------red defence ----------------*/
+.fussball-table .teams .red-team #defenceR #playerR1d{
+  top: 120px;
+}
+.fussball-table .teams .red-team #defenceR #playerR2d{
+  top: 250px;
+}
+.fussball-table .teams .red-team #defenceR #playerR3d{
+  top: 385px;
+}
+/*-------------red forward ------------------*/
+.fussball-table .teams .red-team #forwardsR #playerR1f {
+  top: 120px;
+}
+.fussball-table .teams .red-team #forwardsR #playerR2f {
+  top: 250px;
+}
+.fussball-table .teams .red-team #forwardsR #playerR3f {
+  top: 385px;
+}
+.fussball-table .teams .red-team #defenceR .players:before , .fussball-table .teams .red-team #forwardsR .players:before {
+  top: 11%;   
+}
+.fussball-table .teams .red-team #defenceR .players:after , .fussball-table .teams .red-team #forwardsR .players:after{
+  top: 90%;
+}
+/*draw three defence players ---------------*/
+.fussball-table .teams .blue-team #defenceB ,.fussball-table .teams .red-team #defenceR  {
+  left: 24.98571%;
+}
+/*draw three forward players --------------*/
+.fussball-table .teams .red-team #forwardsR , .fussball-table .teams .blue-team #forwardsB  {
+  left: 55.95714%;
+}
+/*draw the same black boxes to blue players and rotate them 180 ---------------------rrrrr*/
+.fussball-table .teams .blue-team {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+/* draw black box */
+.fussball-table .teams .players:before, .fussball-table .teams .players:after {
+  content: " ";
+  width: 10px;
+  background: black;
+  height: 10px;
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  margin-top: -5px;
+  opacity: 0.75;
+}
+
+.fussball-table .teams #playerB1d,.fussball-table .teams #playerB2d ,.fussball-table .teams #playerB3d ,
+.fussball-table .teams #playerB1f,.fussball-table .teams #playerB2f ,.fussball-table .teams #playerB3f ,
+.fussball-table .teams #playerR1d , .fussball-table .teams #playerR2d , .fussball-table .teams #playerR3d ,
+.fussball-table .teams #playerR1f , .fussball-table .teams #playerR2f , .fussball-table .teams #playerR3f  {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  margin-top: -10px;
+}
+
+.fussball-table .teams #playerB1d:before ,.fussball-table .teams #playerB2d:before , .fussball-table .teams #playerB3d:before,
+.fussball-table .teams #playerB1f:before ,.fussball-table .teams #playerB2f:before , .fussball-table .teams #playerB3f:before,
+.fussball-table .teams #playerR1d , .fussball-table .teams #playerR2d , .fussball-table .teams #playerR3d,
+.fussball-table .teams #playerR1f , .fussball-table .teams #playerR2f , .fussball-table .teams #playerR3f{
+  content: " ";
+  position: absolute;
+  width: 55px;
+  height: 36px;
+  left: -23px;
+}
+.fussball-table .teams .red-team #playerR1d , .fussball-table .teams .red-team #playerR2d,
+.fussball-table .teams .red-team #playerR3d,.fussball-table .teams .red-team #playerR1f , 
+.fussball-table .teams .red-team #playerR2f, .fussball-table .teams .red-team #playerR3f {
+  background-image: url(player1.png);
+  background-size: 100%;
+}
+.fussball-table .teams .blue-team #playerB1d:before ,.fussball-table .teams .blue-team #playerB2d:before,
+.fussball-table .teams .blue-team #playerB3d:before,.fussball-table .teams .blue-team #playerB1f:before ,
+.fussball-table .teams .blue-team #playerB2f:before, .fussball-table .teams .blue-team #playerB3f:before{
+  background-image: url(player.png);
+  background-size: 100%;
+}
+
+/*make ball  (center of background) ----------------here change ball position------------->>>>>rania ..........*/ 
+#ball{
+  content: " ";
+  position: absolute;
+    height: 70px;
+  width: 70px;
+   left: 636px ;
+  top: 293px;
+    background: url(ball.png);
+  background-size: 130%;
+}
+
+</style>
+ <script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+<div class='fussball-table'>
+  <div class='pitch'>
+    <div class='markings'>
+      <div class='halfway-line' id="ball"></div>
+      <div class='blue-box'>
+        <div class='six-yard-box'></div>
+      </div>
+      <div class='red-box'>
+        <div class='six-yard-box'></div>
+      </div>
+      
+   </div>
+  </div>
+  
+  
+  <div class='teams'>
+    <div class='blue-team'>
+      <div id='defenceB'>
+        <div class='players'>
+          <div id='playerB1d'></div>
+          <div id='playerB2d'></div>
+          <div id='playerB3d'></div>
+        </div>
+      </div>
+      <div id='forwardsB'>
+        <div class='players'>
+          <div id='playerB1f'></div>
+          <div id='playerB2f'></div>
+          <div id='playerB3f'></div>
+        </div>
+      </div>
+    </div>
+    <div class='red-team'>
+      <div id='defenceR'>
+        <div class='players'>
+          <div id='playerR1d'></div>
+          <div id='playerR2d'></div>
+          <div id='playerR3d'></div>
+        </div>
+      </div>
+      <div id='forwardsR'>
+        <div class='players'>
+          <div id='playerR1f'></div>
+          <div id='playerR2f'></div>
+          <div id='playerR3f'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename='futtt9.js') }}"></script>
+</html>
